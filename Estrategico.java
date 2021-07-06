@@ -5,10 +5,10 @@ public class Estrategico extends Indicador {
 	
 	private String nomeProjetoEstrategico;
 	private String indicadorEstrategico;
-	private int metaEstrategico;
+	private float metaEstrategico;
 	private String responsavelEstrategico;
 
-	public Estrategico(String setor, String agenda, String descricao, String mes, int ano) {
+	public Estrategico( String agenda, String descricao, String mes, String ano) {
 		super(agenda, descricao, mes, ano);
 	}
 	
@@ -25,14 +25,14 @@ public class Estrategico extends Indicador {
 		sb.append(";");
 		sb.append(this.responsavelEstrategico);
 		sb.append(";");
-		sb.append(this.calcularNumeroIndicador());
+		sb.append(this.calcularTotalIndicadores());
 		
 		
 		return sb.toString();
 	}
 
 	@Override
-	public int calcularNumeroIndicador() {
+	public int calcularTotalIndicadores() {
 		return 25;
 	}
 
@@ -52,12 +52,12 @@ public class Estrategico extends Indicador {
 		this.indicadorEstrategico = indicadorEstrategico;
 	}
 
-	public int getMetaEstrategico() {
+	public float getMetaEstrategico() {
 		return metaEstrategico;
 	}
 
-	public void setMetaEstrategico(int metaEstrategico) {
-		this.metaEstrategico = metaEstrategico;
+	public void setMetaEstrategico(float campos) {
+		this.metaEstrategico = campos;
 	}
 
 	public String getResponsavelEstrategico() {

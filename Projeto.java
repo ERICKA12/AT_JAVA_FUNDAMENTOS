@@ -4,10 +4,10 @@ public class Projeto extends Indicador {
 	
 	private String nomeProjeto;
 	private String indicadorProjeto;
-	private int metaProjeto;
+	private float metaProjeto;
 	private String responsavelProjeto;
 	
-	public Projeto(String agenda, String descricao, String mes ,int ano) {
+	public Projeto(String agenda, String descricao, String mes ,String ano) {
 		super(agenda, descricao, mes,ano);
 	}
 	
@@ -22,7 +22,7 @@ public class Projeto extends Indicador {
 		sb.append(";");
 		sb.append(this.nomeProjeto);
 		sb.append(";");
-		sb.append(this.calcularNumeroIndicador());
+		sb.append(this.calcularTotalIndicadores());
 		
 		} else {
 			System.out.println("A meta do projeto foi preenchida incorretamente.");
@@ -30,6 +30,7 @@ public class Projeto extends Indicador {
 		
 		return sb.toString();
 	}
+
 	
 	public String getNomeProjeto() {
 		return nomeProjeto;
@@ -57,14 +58,14 @@ public class Projeto extends Indicador {
 
 
 
-	public int getMetaProjeto() {
+	public float getMetaProjeto() {
 		return metaProjeto;
 	}
 
 
 
 
-	public void setMetaProjeto(int metaProjeto) {
+	public void setMetaProjeto(float metaProjeto) {
 		this.metaProjeto = metaProjeto;
 	}
 
@@ -83,7 +84,7 @@ public class Projeto extends Indicador {
 	}
 
 	@Override
-	public int calcularNumeroIndicador() {
+	public int calcularTotalIndicadores() {
 		return 10;
 	}
 

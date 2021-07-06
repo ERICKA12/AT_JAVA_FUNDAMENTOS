@@ -1,0 +1,4 @@
+X;Programa de Gestão & Transparência; Superintendência de Gestão;
+P; Monitoramento e Avaliação;Novas Tecnologias Sociais;Janeiro;2021;Projeto de Novas Tecnologias Sociais;Número de novas tecnologias desenvolvidas;50;Ericka;
+S;Saúde Ribeirinha; Apoio aos povos ribeirinhos;Fevereiro;2021;Polos de Telessaúde;Número de polos de telessaúde implantados;50;Luiz Castro;
+E;Captação; Captação de recursos para Planejamento Estratégico;Janeiro;2021;Planejamento Estratégico 2030;Alcance de metas;100;Michelle;

@@ -8,7 +8,7 @@ public class Setor {
 	private String superintendencia;
 	private String telefone;
 	private LocalDateTime data;
-	private Indicador indicador; // relacionamento 1:1 - setor tem 1 indicador
+	private Indicador indicador; // relacionamento 1:1 - 1 setor tem 1 indicador
 	
 	public Setor() {
 		data = LocalDateTime.now();

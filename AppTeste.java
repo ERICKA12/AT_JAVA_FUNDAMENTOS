@@ -6,6 +6,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.ericka.appIndicadoresGestao.modelo.dominio.DesempenhoSetorial;
+import com.ericka.appIndicadoresGestao.modelo.dominio.Estrategico;
+import com.ericka.appIndicadoresGestao.modelo.dominio.Projeto;
+
 public class AppTeste {
 	public static void main(String[] args) {
 		try {
@@ -27,24 +31,44 @@ public class AppTeste {
 					
 					String[] campos = linha.split(";");
 					
-					if(campos.length == 2) {
-						System.out.println("Cliente/Função");
-							
-					} else {
 						switch (campos[0].toUpperCase()) {
+						case "X":							
+							System.out.println("Indicadores:");							
+							break;
+							
+							
 						case "P":
 						case "p":
-							System.out.println("Indicador de Projeto:");
+							Projeto prj1 = new Projeto(campos[1], campos[2], campos[3], campos[4]);
+							prj1.setNomeProjeto(campos[5]);
+							prj1.setIndicadorProjeto(campos[6]);
+							prj1.setMetaProjeto(Float.valueOf(campos[7]));
+							prj1.setResponsavelProjeto(campos[8]);
+							escrita.write(prj1.TotalDeindicadores());
+							
+							//System.out.println("Indicador de Projeto: "+prj1);
 						break;
+							
 						
 						case "S":
 						case "s":
-							System.out.println("Indicador de Desempenho Setorial:");
+							DesempenhoSetorial ds1 = new DesempenhoSetorial(campos[1], campos[2], campos[3], campos[4]);
+							ds1.setNomeMetrica(campos[5]);
+							ds1.setIndicadorSetor(campos[6]);
+							ds1.setMetaSetor(Float.valueOf(campos[7]));						
+							ds1.setResponsavelSetor(campos[8]);
+							escrita.write(ds1.TotalDeindicadores());
+
 						break;
 						
 						case "E":
 						case "e":
-							System.out.println("Indicador de Planejamento Estratégico:");
+							Estrategico e1 = new Estrategico(campos[1], campos[2], campos[3], campos[4]);
+							e1.setNomeProjetoEstrategico(campos[5]);
+							e1.setIndicadorEstrategico(campos[6]);
+							e1.setMetaEstrategico(Float.valueOf(campos[7]));
+							e1.setResponsavelEstrategico(campos[8]);
+							escrita.write(e1.TotalDeindicadores());
 						break;
 							
 						default:
@@ -52,7 +76,6 @@ public class AppTeste {
 							break;
 
 							}
-					}
 	
 				linha = leitura.readLine();
 				
@@ -68,7 +91,7 @@ public class AppTeste {
 			}
 				
 		} finally {
-			System.out.println("Processamento finalizado!");
+			System.out.println("Finalizado.");
 		}
 		
 	}

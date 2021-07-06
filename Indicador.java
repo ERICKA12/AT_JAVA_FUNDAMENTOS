@@ -1,20 +1,30 @@
 package com.ericka.appIndicadoresGestao.modelo.dominio;
 
-public abstract class Indicador {
+public class Indicador {
 	
 	private String agenda;
 	private String descricao;
 	private String mes;
-	private int ano;
+	private String ano;
 	
 	
-	public Indicador(String agenda, String descricao, String mes ,int ano)
+	public Indicador(String agenda, String descricao, String mes ,String ano)
 	{
 		
 		this.agenda = agenda;
 		this.descricao = descricao;
 		this.mes = mes;
 		this.ano = ano;
+	}
+	
+	public String TotalDeindicadores() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.agenda);
+		sb.append(";");
+		sb.append(this.calcularTotalIndicadores());
+		sb.append("\r\n");
+		
+		return sb.toString();
 	}
 	
 	@Override
@@ -32,9 +42,11 @@ public abstract class Indicador {
 		return sb.toString();
 	}
 	
+	public int calcularTotalIndicadores() {
+		return 0;
+	}
 	
-	public abstract int calcularNumeroIndicador();
-
+	
 
 	public String getAgenda() {
 		return agenda;
@@ -66,12 +78,12 @@ public abstract class Indicador {
 	}
 
 
-	public int getAno() {
+	public String getAno() {
 		return ano;
 	}
 
 
-	public void setAno(int ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 		

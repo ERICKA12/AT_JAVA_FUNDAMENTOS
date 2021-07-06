@@ -4,11 +4,11 @@ public class DesempenhoSetorial extends Indicador {
 	
 	String nomeMetrica;
 	String indicadorSetor;
-	int metaSetor;
+	float metaSetor;
 	String responsavelSetor;
 	
 	
-	public DesempenhoSetorial(String agenda, String descricao, String mes ,int ano) {
+	public DesempenhoSetorial(String agenda, String descricao, String mes ,String ano) {
 		super(agenda, descricao, mes,ano);
 	}
 	
@@ -26,14 +26,14 @@ public class DesempenhoSetorial extends Indicador {
 		sb.append(";");
 		sb.append(this.responsavelSetor);
 		sb.append(";");		
-		sb.append(this.calcularNumeroIndicador());
+		sb.append(this.calcularTotalIndicadores());
 		
 		return sb.toString();
 	}
 	
 		
 	@Override
-	public int calcularNumeroIndicador() {
+	public int calcularTotalIndicadores() {
 		return 20;
 	}
 	
@@ -46,12 +46,12 @@ public class DesempenhoSetorial extends Indicador {
 		this.indicadorSetor = string;
 	}
 
-	public int getMetaSetor() {
+	public float getMetaSetor() {
 		return metaSetor;
 	}
 
-	public void setMetaSetor(int metaSetor) {
-		this.metaSetor = metaSetor;
+	public void setMetaSetor(Float float1) {
+		this.metaSetor = float1;
 	}
 
 	public String getResponsavelSetor() {
